@@ -10,7 +10,6 @@ import matplotlib.pyplot as plt
 import gym
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 
-
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 warnings.simplefilter("ignore", category=RuntimeWarning)
