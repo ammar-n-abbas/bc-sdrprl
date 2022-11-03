@@ -49,9 +49,9 @@ def pad(iterable, size, padding=None):
 name_eng = matlab.engine.find_matlab()
 eng1 = matlab.engine.connect_matlab(name_eng[0])
 
-Y_Thresh = pd.read_csv(r"C:\Users\abbas\Desktop\case_studies\Datasets\TEP\PV_thresh.csv", header=0, delimiter=';')
+Y_Thresh = pd.read_csv(r".\PV_thresh.csv", header=0, delimiter=';')
 Y_Thresh = Y_Thresh[:40]
-U_Thresh = pd.read_csv(r"C:\Users\abbas\Desktop\case_studies\Datasets\TEP\CV_thresh.csv", header=0, delimiter=',')
+U_Thresh = pd.read_csv(r".\CV_thresh.csv", header=0, delimiter=',')
 
 init_corr = [0.0]
 eng1.set_param('MultiLoop_mode1_DRL_SingleAgent/TE Plant/PID-DRPRL', 'sw', str(1), nargout=0)
@@ -391,9 +391,9 @@ class TD3(object):
 
     def train_actor_bc(self, replay_buffer, batch_size=None):
         xmv = np.expand_dims(
-            np.load(r"C:\Users\abbas\Desktop\case_studies\AlarmManagement\temexd_mod\XMV_RPL_big.npy")[:, 2] / 100.0, 1)
+            np.load(r".\XMV_RPL_big.npy")[:, 2] / 100.0, 1)
         xmeas = np.expand_dims(
-            np.load(r"C:\Users\abbas\Desktop\case_studies\AlarmManagement\temexd_mod\XMEAS_RPL_big.npy")[:, 0], 1)
+            np.load(r".\XMEAS_RPL_big.npy")[:, 0], 1)
 
         error_signal = []
         for i in range(len(xmeas)):
