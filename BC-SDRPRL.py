@@ -56,18 +56,18 @@ name_eng = matlab.engine.find_matlab()
 eng1 = matlab.engine.connect_matlab(name_eng[0])
 eng2 = matlab.engine.connect_matlab(name_eng[1])
 
-Y_Thresh = pd.read_csv(r"C:\Users\abbas\Desktop\case_studies\Datasets\TEP\PV_thresh.csv", header=0, delimiter=';')
+Y_Thresh = pd.read_csv(r".\PV_thresh.csv", header=0, delimiter=';')
 Y_Thresh = Y_Thresh[:40]
-U_Thresh = pd.read_csv(r"C:\Users\abbas\Desktop\case_studies\Datasets\TEP\CV_thresh.csv", header=0, delimiter=',')
+U_Thresh = pd.read_csv(r".\CV_thresh.csv", header=0, delimiter=',')
 
-xmv = np.load(r"C:\Users\abbas\Desktop\case_studies\AlarmManagement\temexd_mod\temexd_mod\xmv_full_1000000.npy") / 100.0
+xmv = np.load(r".\xmv_full_1000000.npy") / 100.0
 xmv = np.expand_dims(np.delete(xmv, [4, 8, 11], 1)[:, 2], 1)
-xmeas = np.load(r"C:\Users\abbas\Desktop\case_studies\AlarmManagement\temexd_mod\temexd_mod\xmeas_full_1000000.npy")
+xmeas = np.load(r".\xmeas_full_1000000.npy")
 xmeas = np.delete(xmeas, 18, 1)
 
-xmv_IOHMM = np.load(r"C:\Users\abbas\Desktop\case_studies\AlarmManagement\temexd_mod\temexd_mod\xmv_IOHMM.npy") / 100.0
+xmv_IOHMM = np.load(r".\xmv_IOHMM.npy") / 100.0
 xmv_IOHMM = np.expand_dims(np.delete(xmv_IOHMM, [4, 8, 11], 1)[:, 2], 1)
-xmeas_IOHMM = np.load(r"C:\Users\abbas\Desktop\case_studies\AlarmManagement\temexd_mod\temexd_mod\xmeas_IOHMM.npy")
+xmeas_IOHMM = np.load(r".\xmeas_IOHMM.npy")
 xmeas_IOHMM = np.delete(xmeas_IOHMM, 18, 1)
 
 n_dim = 20
